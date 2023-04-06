@@ -9,7 +9,7 @@ In this project I will try to make a Quiz App. Project description and new techn
 Besides these I made the project even better by making it a multiple choice quiz which supports up to 4 choices (just delete the "//" you will also find instructions "//enable this to make the quiz with 4 choices also enable in line 60"
 
 I also tought that it would be good to make choices shuffle! I tried to do it by simply adding 
-`.random `at the end but it didn`t work. After my research I found that I can do it by a very simple code which is .shuffled; 
+`.random `at the end but it didn´t work. After my research I found that I can do it by a very simple code which is `.shuffled`; 
 
 ``func getAnswers() -> [String] {
         return Questions[questionNumber].answer.shuffled() // made the choices shuffled so it would be more fun!
