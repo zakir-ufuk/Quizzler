@@ -12,8 +12,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var trueButton: UIButton!
-    @IBOutlet weak var falseButton: UIButton!
+    @IBOutlet weak var buttonOne: UIButton!
+    @IBOutlet weak var buttonTwo: UIButton!
+    @IBOutlet weak var buttonThree: UIButton!
+   // @IBOutlet weak var buttonFour: UIButton! //enable this to make the quiz with 4 choices also enable in line 60
     @IBOutlet weak var scoreLabel: UILabel!
     
     
@@ -43,12 +45,19 @@ class ViewController: UIViewController {
     }
     
     
-    // *********** FUNCTION TO CHANGE QUESTION
+    // *********** What happens after
     @objc func updateUI() {
         questionLabel.text = quizBrain.getQuestionText()
+        let answerChoices = quizBrain.getAnswers()
+        buttonOne.setTitle(answerChoices[0], for: .normal)
+        buttonTwo.setTitle(answerChoices[1], for: .normal)
+        buttonThree.setTitle(answerChoices[2], for: .normal)
+        
         scoreLabel.text = "Score: \(quizBrain.getScore())"
-        trueButton.backgroundColor = UIColor.clear
-        falseButton.backgroundColor = UIColor.clear
+        buttonOne.backgroundColor = UIColor.clear
+        buttonTwo.backgroundColor = UIColor.clear
+        buttonThree.backgroundColor = UIColor.clear
+      //  buttonFour.backgroundColor = UIColor.clear // enable this to make the quiz with 4 choices
         progressBar.progress = quizBrain.getProgress()
     }
     
